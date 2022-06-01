@@ -3,7 +3,7 @@ import flask_login
 import sirope
 from model.userdto import UserDto
 from model.llorodto import LloroDto
-import views.main.app  as main
+import views.main.app as main
 
 
 def get_blprint():
@@ -28,10 +28,8 @@ def home():
         flask.flash("Es necesario estar logueado")
         return flask.redirect("/login")
 
-
     lloros = list(srp.load_all(LloroDto))
-
-
+    lloros.sort(key=lambda x: x.time, reverse=True)
     sust = {
         "usr": usr,
         "lloros_list": lloros,
@@ -57,6 +55,3 @@ def save_lloro():
     usr.add_lloro_oid(lloroOID)
     srp.save(usr)
     return flask.redirect("/home")
-
-
-

@@ -39,12 +39,12 @@ red">
         {% endif %}
     {% endwith %}
  </div>
-<div class="bg-dark" style="height: 100vh; margin-top:1px;padding-bottom: 10px;">
+<div class="bg-dark" style="min-height: 100vh; margin-top:1px;padding-bottom: 10px;">
 <div class="pb-5"></div>
   </form>
         {% if lloros_list %}
         <ul>
-            {% for lloro in lloros_list[:5] %}
+            {% for lloro in lloros_list %}
                 <li>
                     <div class="d-lg-flex flex-column border border-white flex-wrap me-5 mt-2 mb-2">
                         <div class=" text-white h5 p-2">{{ lloro.author }} <form action="/profile/delete" method="post">

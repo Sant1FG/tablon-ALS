@@ -28,6 +28,7 @@ def user_profile(profile_id):
         return flask.redirect("/login")
 
     misLloros = list(sirope.Sirope().filter(LloroDto, lambda m: m.author == profile_id))
+    misLloros.sort(key=lambda x: x.time, reverse=True)
 
     sust = {
         "usr": usr,

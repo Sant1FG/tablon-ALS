@@ -29,6 +29,7 @@ def results():
 
     if usr is not None:
         msgs = list(srp.multi_load(usr.oids_lloros))
+        msgs.sort(key=lambda x: x.time, reverse=True)
         sust = {
             "usr": usr,
             "lloros_list": msgs,

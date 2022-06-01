@@ -39,7 +39,7 @@ red">
         {% endif %}
     {% endwith %}
  </div>
-<div class="bg-dark" style="height: 100vh; margin-top:1px;padding-bottom: 10px">
+<div class="bg-dark" style="min-height: 100vh; margin-top:1px;padding-bottom: 10px">
     <form action="/home/save_lloro" method="post">
   <div class="mb-3 me-5 ms-5">
     <label for="inputLloro" class="form-label text-white"></label>
@@ -50,7 +50,7 @@ red">
     <h1>Results</h1>
         {% if lloros_list %}
         <ul>
-            {% for lloro in lloros_list[-5:] %}
+            {% for lloro in lloros_list %}
                 <li>
                     <div class="d-lg-flex flex-column border border-white flex-wrap me-5 mt-2 mb-2">
                         <div class=" text-white h5 p-2">{{ lloro.author }}</div>

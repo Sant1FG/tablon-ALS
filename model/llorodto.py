@@ -10,7 +10,7 @@ class LloroDto:
 
     def __init__(self, msg, author):
         self._msg = msg
-        self._time = datetime.now()
+        self._time = datetime.now().replace(microsecond=0)
         self._author = author
 
     @property
